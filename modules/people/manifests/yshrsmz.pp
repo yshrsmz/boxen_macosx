@@ -3,7 +3,10 @@ class people::yshrsmz {
     $opt = "${home}/opt"
     $dotfiles = "${opt}/dotfiles"
     $dust = "${home}/.dust"
-
+    
+    file { $opt:
+        ensure => "directory"
+    }
     repository { $dotfiles:
         source => "yshrsmz/dotfiles",
         require => File[$opt]
