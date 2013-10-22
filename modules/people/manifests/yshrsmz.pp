@@ -14,10 +14,10 @@ class people::yshrsmz {
         require => Repository[$dotfiles]
     }
 
-    exec { "gem install bundler":
-        cwd => $home
-        require => Repository[$dotfiles]
-    }
+#    exec { "gem install bundler":
+#        cwd => $home
+#        require => Repository[$dotfiles]
+#    }
 
     exec { "bundle install":
         cwd => $dotfiles,
