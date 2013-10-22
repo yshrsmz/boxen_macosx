@@ -32,7 +32,7 @@ class project::globalsetup {
             'imagemagick',
             'tig',
             'wget'
-        ]
+        ]:
     }
 
     package {
