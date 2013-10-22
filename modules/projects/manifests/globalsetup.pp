@@ -10,7 +10,7 @@ class project::globalsetup {
     include osx::finder::unhide_library
     class osx::finder::show_all_files {
         include osx::finder
-        boxen::osx_defaults { 'Show all files'
+        boxen::osx_defaults { 'Show all files':
             user => $::boxen_user,
             domain => 'com.apple.finder',
             key => 'AppleShowAllFiles',
