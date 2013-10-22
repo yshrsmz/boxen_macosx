@@ -1,5 +1,5 @@
 class projects::globalsetup {
-    include osx
+#    include osx
     include dropbox
     include skype
     include iterm2::stable
