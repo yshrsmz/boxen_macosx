@@ -1,15 +1,15 @@
 class people::yshrsmz {
     $home = "/Users/${::luser}"
-    $opt = "${home}/opt"
-    $dotfiles = "${opt}/dotfiles"
+    $src = "${home}/src"
+    $dotfiles = "${src}/dotfiles"
     $dust = "${home}/.dust"
     
-    file { $opt:
+    file { $src:
         ensure => "directory"
     }
     repository { $dotfiles:
         source => "yshrsmz/dotfiles",
-        require => File[$opt]
+        require => File[$src]
     }
 
     exec { "sh ${dotfiles}/setup.sh":
