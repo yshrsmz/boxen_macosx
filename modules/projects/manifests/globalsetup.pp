@@ -1,4 +1,4 @@
-class project::globalsetup {
+class projects::globalsetup {
     include osx
     include dropbox
     include skype
