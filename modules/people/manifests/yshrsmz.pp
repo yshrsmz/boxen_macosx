@@ -4,9 +4,9 @@ class people::yshrsmz {
     $dotfiles = "${src}/dotfiles"
     $dust = "${home}/.dust"
     
-    file { $src:
-        ensure => "directory"
-    }
+#    file { $src:
+#        ensure => "directory"
+#    }
     repository { $dotfiles:
         source => "yshrsmz/dotfiles",
         require => File[$src]
