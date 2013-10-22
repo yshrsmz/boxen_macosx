@@ -10,7 +10,7 @@ class project::globalsetup {
     class osx::finder::show_all_files {
         include osx::finder
         boxen::osx_defaults { 'Show all files'
-            user => $::luser
+            user => $::luser,
             domain => 'com.apple.finder',
             key => 'AppleShowAllFiles',
             value => true,
