@@ -5,12 +5,13 @@ class project::globalsetup {
     include iterm2::stable
     include chrome
     include eclipse::jee
+    include mou
 
     include osx::finder::unhide_library
     class osx::finder::show_all_files {
         include osx::finder
         boxen::osx_defaults { 'Show all files'
-            user => $::luser,
+            user => $::boxen_user,
             domain => 'com.apple.finder',
             key => 'AppleShowAllFiles',
             value => true,
@@ -35,9 +36,6 @@ class project::globalsetup {
     }
 
     package {
-        'Mou':
-            source => 'http://mouapp.com/download/Mou.zip',
-            provider => compressed_app
         'GoogleJapaneseInput':
             source => 'http://dl.google.com/japanese-ime/latest/GoogleJapaneseInput.dmg'
             provider => pkgdmg
@@ -54,10 +52,10 @@ class project::globalsetup {
         path    => '/etc/shells',
         line    => "${boxen::config::homebrewdir}/bin/zsh",
         require => Package['zsh'],
-        before  => Osx_chsh[$::luser];
+        before  => Osx_chsh[$::boxen_user];
     }
 
-    osx_chsh { $::luser:
+    osx_chsh { $::boxen_user:
         shell => "${boxen::config::homebrewdir}/bin/zsh";
     }
 }
