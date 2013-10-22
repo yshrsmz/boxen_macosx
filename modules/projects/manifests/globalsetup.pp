@@ -4,6 +4,7 @@ class project::globalsetup {
     include skype
     include iterm2::stable
     include chrome
+    include eclipse::jee
 
     include osx::finder::unhide_library
     class osx::finder::show_all_files {
