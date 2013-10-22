@@ -15,12 +15,13 @@ class projects::globalsetup {
             domain => 'com.apple.finder',
             key => 'AppleShowAllFiles',
             value => true,
-            notify => Exec['Killall Finder']
+            notify => Exec['killall Finder']
         }
     }
     include osx::finder::show_all_files
 
     include osx::dock::autohide
+    include osx::software_update
 
     package {
         [
