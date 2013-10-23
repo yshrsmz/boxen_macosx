@@ -22,7 +22,7 @@ class people::yshrsmz {
 #        require => Repository[$dotfiles]
 #    }
 
-    exec { "bundle install $dotfiles":
+    exec { "bundle install":
         cwd => $dotfiles,
         logoutput => true,
         require => Repository[$dotfiles]
