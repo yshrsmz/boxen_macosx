@@ -12,7 +12,7 @@ class people::yshrsmz {
         require => File[$src]
     }
 
-    exec { "sh ${dotfiles}/setup.sh":
+    exec { "sh ${dotfiles}/setup.sh ${dotfiles}":
         cwd => $dotfiles,
         require => Repository[$dotfiles]
     }
