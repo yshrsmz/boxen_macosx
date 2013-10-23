@@ -18,7 +18,7 @@ class people::yshrsmz {
     }
 
     $version = "1.9.3-p448"
-    rugy::gem { "tmuxinator for ${version}":
+    ruby::gem { "tmuxinator for ${version}":
         gem => 'tmuxinator',
         ruby => $version,
     }
