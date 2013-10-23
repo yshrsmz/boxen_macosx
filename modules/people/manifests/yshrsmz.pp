@@ -1,7 +1,7 @@
 class people::yshrsmz {
     $home = "/Users/${::luser}"
     $src = "${home}/src"
-    $dotfiles = "${src}/dotfiles"
+    $dotfiles = "${HOME}/dotfiles"
     $dust = "${home}/.dust"
 
 #    file { $src:
