@@ -29,7 +29,7 @@ class projects::globalsetup {
 
     $version = '1.9.3-p448'
     ruby::gem { "bundler for ${version}":
-        gem => 'bundler'
+        gem => 'bundler',
         ruby => $version
     }
 
