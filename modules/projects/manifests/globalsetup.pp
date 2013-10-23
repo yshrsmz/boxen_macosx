@@ -6,7 +6,7 @@ class projects::globalsetup {
     include chrome
     include eclipse::jee
     include mou
-
+    
     include osx::finder::unhide_library
     class osx::finder::show_all_files {
         include osx::finder
@@ -22,6 +22,16 @@ class projects::globalsetup {
 
     include osx::dock::autohide
     include osx::software_update
+
+    class { 'ruby::global':
+        version => '1.9.3-p448'
+    }
+
+    $version = '1.9.3-p448'
+    ruby::gem { "bundler for ${version}":
+        gem => 'bundler'
+        ruby => $version
+    }
 
     package {
         [
