@@ -3,7 +3,7 @@ class people::yshrsmz {
     $src = "${home}/src"
     $dotfiles = "${src}/dotfiles"
     $dust = "${home}/.dust"
-    
+
 #    file { $src:
 #        ensure => "directory"
 #    }
@@ -24,6 +24,7 @@ class people::yshrsmz {
 
     exec { "bundle install":
         cwd => $dotfiles,
+        logoutput => true,
         require => Repository[$dotfiles]
     }
 
