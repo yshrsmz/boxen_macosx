@@ -27,12 +27,6 @@ class projects::globalsetup {
         version => '1.9.3-p448'
     }
 
-    $version = '1.9.3-p448'
-    ruby::gem { "bundler for ${version}":
-        gem => 'bundler',
-        ruby => $version
-    }
-
     package {
         [
             'tmux',
