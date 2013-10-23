@@ -17,15 +17,21 @@ class people::yshrsmz {
         require => Repository[$dotfiles]
     }
 
+    $version = "1.9.3-p448"
+    rugy::gem { "tmuxinator for ${version}":
+        gem => 'tmuxinator',
+        ruby => $version,
+    }
+
 #    exec { "gem install bundler":
 #        cwd => $home
 #        require => Repository[$dotfiles]
 #    }
 
-    exec { "bundle install":
-        cwd => $dotfiles,
-        logoutput => true,
-        require => Repository[$dotfiles]
-    }
+#exec { "bundle install":
+#        cwd => $dotfiles,
+#        logoutput => true,
+#        require => Repository[$dotfiles]
+#    }
 
 }
