@@ -65,7 +65,7 @@ class projects::globalsetup {
     package {
         'tomcat':
             install_options => [
-                'stable'
+                '--stable'
             ]
     }
 
