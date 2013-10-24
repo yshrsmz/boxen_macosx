@@ -32,6 +32,10 @@ class projects::globalsetup {
         version => 'v0.10.13'
     }
 
+    nodejs::module{ ['grunt-cli', 'node-inspector']:
+        node_version => 'v0.10.13'
+    }
+
     package {
         [
             'tmux',
