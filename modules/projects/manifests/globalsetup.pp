@@ -62,6 +62,13 @@ class projects::globalsetup {
             ]
     }
 
+    package {
+        'tomcat':
+            install_options => [
+                'stable'
+            ]
+    }
+
     file_line { 'add zsh to /etc/shells':
         path    => '/etc/shells',
         line    => "${boxen::config::homebrewdir}/bin/zsh",
