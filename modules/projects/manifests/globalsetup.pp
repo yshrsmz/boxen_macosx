@@ -1,12 +1,11 @@
 class projects::globalsetup {
-#    include osx
     include dropbox
     include skype
     include iterm2::stable
     include chrome
     include eclipse::jee
     include mou
-    
+
     include osx::finder::unhide_library
     class osx::finder::show_all_files {
         include osx::finder
@@ -23,8 +22,14 @@ class projects::globalsetup {
     include osx::dock::autohide
     include osx::software_update
 
+    # set global ruby version
     class { 'ruby::global':
         version => '1.9.3-p448'
+    }
+
+    # set global nodejs version
+    class { 'nodejs::global':
+        version => 'v0.10.13'
     }
 
     package {
