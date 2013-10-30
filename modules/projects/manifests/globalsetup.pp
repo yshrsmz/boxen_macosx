@@ -5,6 +5,8 @@ class projects::globalsetup {
     include chrome
     include eclipse::jee
     include mou
+    include better_touch_tools
+    include alfred
 
     include osx::finder::unhide_library
     class osx::finder::show_all_files {
