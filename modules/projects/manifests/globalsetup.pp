@@ -3,7 +3,7 @@ class projects::globalsetup {
     include skype
     include iterm2::stable
     include chrome
-    include eclipse::jee
+#    include eclipse::jee
     include mou
     include better_touch_tools
     include alfred
